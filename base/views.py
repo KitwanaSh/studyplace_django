@@ -9,8 +9,8 @@ rooms = [
 def Home(request):
     """ Home page """
     context = {"rooms": rooms}
-    return render(request, "home.html", context)
+    return render(request, "base/home.html", context)
 
 def Room(request):
     """ The room page """
-    return render(request, "room.html")
+    return render(request, "base/room.html")
