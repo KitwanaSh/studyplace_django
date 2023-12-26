@@ -1,22 +1,22 @@
 from django.shortcuts import render
+from .models import Room
 
-rooms = [
-    {"id": 1, "name": "Let's all learn python!"},
-    {"id": 2, "name": "Are you a designer"},
-    {"id": 3, "name": "Frontend developer"},
-]
+# rooms = [
+#     {"id": 1, "name": "Let's all learn python!"},
+#     {"id": 2, "name": "Are you a designer"},
+#     {"id": 3, "name": "Frontend developer"},
+# ]
 
-def Home(request):
+def home(request):
     """ Home page """
-    context = {"rooms": rooms}
+    rooms = Room.objects.all()
+    context = {'rooms': rooms}
+
     return render(request, "base/home.html", context)
 
-def Room(request, pk):
+def room(request, pk):
     """ The room page """
-    room = None
-    for i in rooms:
-        if i['id'] == int(pk):
-            room = i
+    room = Room.objects.get(id=pk)
     context = {'room': room}
     
     return render(request, "base/room.html", context)
