@@ -1,3 +1,4 @@
-{% block coontent %}
-<h1>Root Template</h1>
+{% extends "main.html" %}
+{% block content %}
+<h1>{{ room.name}}</h1>
 {% endblock %}
