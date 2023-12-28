@@ -2,12 +2,6 @@ from django.shortcuts import render, redirect
 from .models import Room
 from .forms import RoomForm
 
-# rooms = [
-#     {"id": 1, "name": "Let's all learn python!"},
-#     {"id": 2, "name": "Are you a designer"},
-#     {"id": 3, "name": "Frontend developer"},
-# ]
-
 def home(request):
     """ Home page """
     rooms = Room.objects.all()
