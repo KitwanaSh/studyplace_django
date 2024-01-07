@@ -10,6 +10,9 @@ class User(AbstractUser):
 
     # avatar = 
 
+    EMAIL_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
 class Topic(models.Model):
     """ Return the topic here """
     name = models.CharField(max_length=200)
